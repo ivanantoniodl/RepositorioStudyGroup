@@ -5,8 +5,12 @@
 	<title>Principal</title>
 </head>
 <body>
-	<h1>ESTA ES UNA PRUEBA</h1>
-	<h2>Pruebas</h2>
+	<h1>Registrar autores</h1>
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Registrar">
+	</form>
 	
 </body>
 </html>
