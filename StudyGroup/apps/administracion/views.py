@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,CreateView
+from django.views.generic import TemplateView,CreateView,ListView
+from django.core.urlresolvers import reverse_lazy
 from .models import Estudiante
+
 # Create your views here.
 
 
@@ -8,6 +10,16 @@ from .models import Estudiante
 #	template_name='administracion/index.html'
 
 class RegistrarEstudianteView(CreateView):
-	template_name = 'administracion/index.html'
+	template_name = 'administracion/ingresar.html'
 	model = Estudiante
-	success_url = 
+	fields = ['nombre','apellido','direccion']
+	success_url = reverse_lazy('adm:Listar_Estudiante')
+	
+
+class HomeView(TemplateView):
+	template_name = "administracion/index.html"
+
+class ListarEstudianteView(ListView):
+	template_name = "administracion/listarestudiante.html"
+	paginate_by = 5
+	model = Estudiante

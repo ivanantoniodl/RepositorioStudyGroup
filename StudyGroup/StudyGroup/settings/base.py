@@ -67,6 +67,7 @@ ROOT_URLCONF = 'StudyGroup.urls'
 #    },
 #]
 
+
 WSGI_APPLICATION = 'StudyGroup.wsgi.application'
 
 

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% block profile %}
+
+	<div id="headerwrapwhite">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1>Listado de estudiantes</h1>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Direccion</th>
+								<th>Editar</th>
+								<th>Eliminar</th>
+							</tr>
+						</thead>
+						<tbody>
+						{% for estudiante in object_list %}
+							<tr>
+								<td>{{ estudiante.nombre }}</td>
+								<td>{{ estudiante.apellido }}</td>
+								<td>{{ estudiante.direccion }}</td>
+								<td><span class="glyphicon glyphicon-pencil"></span></td>
+								<td><span class="glyphicon glyphicon-trash"></span></td>
+							</tr>
+						{% endfor %}
+
+						</tbody>
+					</table>
+					<div>
+					    {% if page_obj.has_previous %}
+					      <a href="{% url 'adm:Listar_Estudiante' %}?page={{ page_obj.previous_page_number }}">
+					        <span>&laquo; Anterior</span>
+					      </a>
+					    {% else %}
+					      <span>&laquo; Anterior</span>
+					    {% endif %}
+
+					      <span> | <span>
+
+					    {% if page_obj.has_next %}
+					     <a href="{% url 'adm:Listar_Estudiante' %}?page={{ page_obj.next_page_number }}">
+					        <span>Siguiente &raquo;</span>
+					      </a>
+					    {% else %}
+					      <span>Siguiente &raquo;</span>
+					    {% endif %}
+					</div>
+					<a class="btn btn-primary" href="{% url 'adm:Registrar_Estudiante' %}">Agregar</a>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- headerwrap -->		
+
+{% endblock %}				
