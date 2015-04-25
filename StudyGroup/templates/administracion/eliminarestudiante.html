@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block profile %}
+
+
+<div id="headerwrapwhite">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1 class="centered">Estudiante a eliminar</h1>
+					<table class="table">
+						<tr>
+							<td><strong>Id</strong></td>
+							<td>{{ Estudiante.id }}</td>
+						</tr>
+						<tr>
+							<td><strong>Nombre</strong></td>
+							<td>{{ Estudiante.nombre }}</td>
+						</tr>
+						<tr>
+							<td><strong>Apellido</strong></td>
+							<td>{{ Estudiante.apellido }}</td>
+						</tr>
+						<tr>
+							<td><strong>Dirección</strong></td>
+							<td>{{ Estudiante.direccion }}</td>
+						</tr>
+					</table>
+
+					<form method="post" action="">
+					{% csrf_token %}
+					<div class="centered">
+						<input type="submit" name="Cancelar" value="Cancelar" class="btn btn-danger">
+						<input type="submit" name="Eliminar" value="Eliminar" class="btn btn-success">
+					</div>
+	</form>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- headerwrap -->		
+
+	
+	
+{% endblock profile %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block profile %}
+	<h1>LISTANDO SOLO UN ESTUDIANTE</h1>
+
+	<p>{{ Estudiante.nombre }}</p>
+
+{% endblock profile %}

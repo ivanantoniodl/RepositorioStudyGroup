@@ -34,3 +34,5 @@ class VerEstudianteView(DetailView):
 class DeleteEstudianteView(DeleteView):
 	model = Estudiante
 	success_url = reverse_lazy('adm:Listar_Estudiante')
+	context_object_name = "Estudiante"
+	template_name = "administracion/eliminarestudiante.html"
