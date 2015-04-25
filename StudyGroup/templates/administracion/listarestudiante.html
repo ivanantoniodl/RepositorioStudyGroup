@@ -25,8 +25,8 @@
 								<td>{{ estudiante.nombre }}</td>
 								<td>{{ estudiante.apellido }}</td>
 								<td>{{ estudiante.direccion }}</td>
-								<td><span class="glyphicon glyphicon-pencil"></span></td>
-								<td><span class="glyphicon glyphicon-trash"></span></td>
+								<td><a href="{% url 'adm:Ver_Estudiante' estudiante.id %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+								<td><a href="{% url 'adm:Eliminar_Estudiante' estudiante.id %}"><span class="glyphicon glyphicon-trash"></span></td></a>
 							</tr>
 						{% endfor %}
 
