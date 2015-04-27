@@ -22,7 +22,7 @@ class HomeView(TemplateView):
 
 class ListarEstudianteView(ListView):
 	template_name = "administracion/listarestudiante.html"
-	paginate_by = 5
+	paginate_by = 2
 	model = Estudiante
 
 class VerEstudianteView(DetailView):

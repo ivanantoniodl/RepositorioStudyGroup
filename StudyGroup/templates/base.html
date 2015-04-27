@@ -44,14 +44,9 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="{% url 'adm:Home' %}">Home</a></li>
             <li><a href="{% url 'adm:Listar_Estudiante' %}">Estudiantes</a></li>
-            <li><a href="services.html">SERVICIOS</a></li>
+            <li><a href="{% url 'procedencia:Lista_Departamentos' %}">Departamentos</a></li>
+        
             <li><a href="works.html">TRABAJOS</a></li>
-
-            {% if user.is_authenticated %}
-            	<li class="fotoperfil"><img src="{{ user.avatar }}" width="100%" height="75%"></li>
-            	<li><a href="">{{ user.username }}</a></li>
-            	<li><a href="{% url 'users:logout' %}">Logout</a></li>
-			{% endif %}
 
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
           </ul>
