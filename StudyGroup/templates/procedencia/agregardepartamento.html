@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+{% block profile %}
+	<div id="headerwrapwhite">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<h1 class="centered">Agregar departamento</h1>
+					<form method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<input type="submit" value="Guardar" class="btn btn-primary">
+					</form>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- headerwrap -->	
+{% endblock profile %}
