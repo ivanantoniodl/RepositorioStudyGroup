@@ -6,8 +6,8 @@ urlpatterns = [
     # url(r'^$', 'StudyGroup.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^',include('apps.administracion.urls',namespace='adm')),
-    url(r'^procedencia/',include('apps.procedencia.urls', namespace='procedencia')),
+    url(r'^estudiantes/',include('apps.administracion.urls',namespace='est')),
+    url(r'^departamentos/',include('apps.procedencia.urls', namespace='depto')),
     
 
     url(r'^admin/', include(admin.site.urls)),

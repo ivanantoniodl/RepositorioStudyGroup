@@ -6,18 +6,18 @@ from django.core.urlresolvers import reverse_lazy
 # Create your views here.
 
 class ListarDepartamentoView(ListView):
-	template_name= "procedencia/listadepartamentos.html"
+	template_name= "departamento/listadepartamentos.html"
 	model = Departamento;
 
 
 class AgregarDepartamentoView(CreateView):
-	template_name="procedencia/agregardepartamento.html"
+	template_name="departamento/agregardepartamento.html"
 	model = Departamento;
 	fields = ['nombre']
-	success_url = reverse_lazy("procedencia:Lista_Departamentos")
+	success_url = reverse_lazy("depto:Lista_Departamentos")
 
 class EliminarDepartamentoView(DeleteView):
 	model = Departamento;
-	success_url = reverse_lazy("procedencia:Lista_Departamentos")
-	template_name = "procedencia/eliminardepartamento.html"
+	success_url = reverse_lazy("depto:Lista_Departamentos")
+	template_name = "departamento/eliminardepartamento.html"
 	context_object_name = "Departamento"

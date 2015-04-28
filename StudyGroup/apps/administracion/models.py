@@ -5,5 +5,5 @@ class Estudiante(models.Model):
 	apellido  = models.CharField(max_length=45)
 	direccion = models.CharField(max_length=100)
 
-	def __unicode__self(self):
+	def __unicode__(self):
 		return self.nombre + " " + self.apellido

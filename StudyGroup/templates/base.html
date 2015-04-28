@@ -40,15 +40,20 @@
           </button>
           <a class="navbar-brand" href="#">STUDY GROUPS<i class="fa fa-circle"></i></a>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="{% url 'adm:Home' %}">Home</a></li>
-            <li><a href="{% url 'adm:Listar_Estudiante' %}">Estudiantes</a></li>
-            <li><a href="{% url 'procedencia:Lista_Departamentos' %}">Departamentos</a></li>
-        
-            <li><a href="works.html">TRABAJOS</a></li>
 
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right ">
+            <li class="active"><a href="{% url 'est:Home' %}">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            Administración <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'est:Listar_Estudiante' %}">Estudiantes</a></li>
+                <li><a href="{% url 'depto:Lista_Departamentos' %}">Departamentos</a></li>    
+              </ul>
+            </li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -59,9 +64,6 @@
 
 	{% endblock %}				
 
-
-	
-	
 	
 	<!-- FOOTER -->
 	<div id="f">
@@ -73,36 +75,6 @@
 		</div><!-- container -->
 	</div><!-- Footer -->
 
-
-	<!-- MODAL FOR CONTACT -->
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        <h4 class="modal-title" id="myModalLabel">contact us</h4>
-	      </div>
-	      <div class="modal-body">
-		        <div class="row centered">
-		        	<p>We are available 24/7, so don't hesitate to contact us.</p>
-		        	<p>
-		        		Somestreet Ave, 987<br/>
-						London, UK.<br/>
-						+44 8948-4343<br/>
-						hi@blacktie.co
-		        	</p>
-		        	<div id="mapwrap">
-		<iframe height="300" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.es/maps?t=m&amp;ie=UTF8&amp;ll=52.752693,22.791016&amp;spn=67.34552,156.972656&amp;z=2&amp;output=embed"></iframe>
-					</div>	
-		        </div>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-danger" data-dismiss="modal">Save & Go</button>
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
 
 
     <!-- Bootstrap core JavaScript

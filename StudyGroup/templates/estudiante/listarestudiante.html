@@ -25,8 +25,8 @@
 								<td>{{ estudiante.nombre }}</td>
 								<td>{{ estudiante.apellido }}</td>
 								<td>{{ estudiante.direccion }}</td>
-								<td><a href="{% url 'adm:Ver_Estudiante' estudiante.id %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
-								<td><a href="{% url 'adm:Eliminar_Estudiante' estudiante.id %}"><span class="glyphicon glyphicon-trash"></span></td></a>
+								<td><a href="{% url 'est:Ver_Estudiante' estudiante.id %}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+								<td><a href="{% url 'est:Eliminar_Estudiante' estudiante.id %}"><span class="glyphicon glyphicon-trash"></span></td></a>
 							</tr>
 						{% endfor %}
 
@@ -34,7 +34,7 @@
 					</table>
 					<div>
 					    {% if page_obj.has_previous %}
-					      <a href="{% url 'adm:Listar_Estudiante' %}?page={{ page_obj.previous_page_number }}">
+					      <a href="{% url 'est:Listar_Estudiante' %}?page={{ page_obj.previous_page_number }}">
 					        <span>&laquo; Anterior</span>
 					      </a>
 					    {% else %}
@@ -44,14 +44,14 @@
 					      <span> | <span>
 
 					    {% if page_obj.has_next %}
-					     <a href="{% url 'adm:Listar_Estudiante' %}?page={{ page_obj.next_page_number }}">
+					     <a href="{% url 'est:Listar_Estudiante' %}?page={{ page_obj.next_page_number }}">
 					        <span>Siguiente &raquo;</span>
 					      </a>
 					    {% else %}
 					      <span>Siguiente &raquo;</span>
 					    {% endif %}
 					</div>
-					<a class="btn btn-primary" href="{% url 'adm:Registrar_Estudiante' %}">Agregar</a>
+					<a class="btn btn-primary" href="{% url 'est:Registrar_Estudiante' %}">Agregar</a>
 				</div>
 			</div><!-- row -->
 		</div><!-- container -->
