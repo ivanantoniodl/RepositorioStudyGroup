@@ -8,6 +8,7 @@ urlpatterns = [
 
     url(r'^',include('apps.administracion.urls',namespace='adm')),
     url(r'^procedencia/',include('apps.procedencia.urls', namespace='procedencia')),
+    
 
     url(r'^admin/', include(admin.site.urls)),
 ]

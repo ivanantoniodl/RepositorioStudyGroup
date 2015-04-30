@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static from staticfiles %}
+
+
+{% block profile %}
+
+<div id="headerwrapwhite">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h2 class="centered">Elimiar {{ Departamento.nombre }} </h2>
+				
+					<form method="POST" action="" class="centered">
+						{% csrf_token %}
+						<input type="submit" value="Eliminar" class="btn btn-warning">
+					</form>
+				</div>
+			</div><!-- row -->
+		</div><!-- container -->
+	</div><!-- headerwrap -->		
+	
+{% endblock profile %}

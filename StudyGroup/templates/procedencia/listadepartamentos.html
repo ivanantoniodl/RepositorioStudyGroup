@@ -12,12 +12,16 @@
 						<thead>
 							<tr>
 								<th>Nombre</th>
+								<th>Editar</th>
+								<th>Eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
 							{% for departamentos in object_list  %}
 								<tr>
 									<td>{{ departamentos.nombre }}</td>
+									<td><a href=""><span class="glyphicon glyphicon-pencil"></a></td>
+									<td><a href="{% url 'procedencia:Eliminar_Departamento'  departamentos.id %}"><span class="glyphicon glyphicon-trash"></a></td>
 								</tr>
 							{% endfor %}
 						</tbody>

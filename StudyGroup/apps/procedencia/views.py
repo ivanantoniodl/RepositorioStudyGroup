@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView,CreateView
+from django.views.generic import ListView,CreateView,DeleteView
 from .models import Departamento
 from django.core.urlresolvers import reverse_lazy
 
@@ -15,3 +15,9 @@ class AgregarDepartamentoView(CreateView):
 	model = Departamento;
 	fields = ['nombre']
 	success_url = reverse_lazy("procedencia:Lista_Departamentos")
+
+class EliminarDepartamentoView(DeleteView):
+	model = Departamento;
+	success_url = reverse_lazy("procedencia:Lista_Departamentos")
+	template_name = "procedencia/eliminardepartamento.html"
+	context_object_name = "Departamento"
